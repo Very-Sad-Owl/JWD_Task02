@@ -20,15 +20,17 @@ public class Main {
         ////////////////////////////////////////////////////////////////
 
         Criteria<SearchCriteria.Oven> criteriaOven = new Criteria<>();
-        criteriaOven.add(SearchCriteria.Oven.CAPACITY, 3);
+        criteriaOven.add(SearchCriteria.Oven.CAPACITY, 32);
+
         appliances = service.find(criteriaOven);
         PrintApplianceInfo.print(appliances, criteriaOven);
 
         ////////////////////////////////////////////////////////////////
 
         criteriaOven = new Criteria<>();
-        criteriaOven.add(SearchCriteria.Oven.HEIGHT, 200);
-        criteriaOven.add(SearchCriteria.Oven.DEPTH, 300);
+        criteriaOven.add(SearchCriteria.Oven.HEIGHT, 40);
+        criteriaOven.add(SearchCriteria.Oven.DEPTH, 60);
+
         appliances = service.find(criteriaOven);
         PrintApplianceInfo.print(appliances, criteriaOven);
 
@@ -37,8 +39,18 @@ public class Main {
         Criteria<SearchCriteria.TabletPC> criteriaTabletPC = new Criteria<>();
         criteriaTabletPC.add(SearchCriteria.TabletPC.COLOR, "BLUE");
         criteriaTabletPC.add(SearchCriteria.TabletPC.DISPLAY_INCHES, 14);
-        criteriaTabletPC.add(SearchCriteria.TabletPC.MEMORY_ROM, 4);
+        criteriaTabletPC.add(SearchCriteria.TabletPC.MEMORY_ROM, 8000);
+
         appliances = service.find(criteriaTabletPC);
         PrintApplianceInfo.print(appliances, criteriaTabletPC);
+
+        /////////////////////////////////////////////////////////////////////
+
+        Criteria<SearchCriteria.Refrigerator> criteriaFridge = new Criteria<>();
+        criteriaFridge.add(SearchCriteria.Refrigerator.POWER_CONSUMPTION, 200);
+        criteriaFridge.add(SearchCriteria.Refrigerator.HEIGHT, 150);
+
+        appliances = service.find(criteriaFridge);
+        PrintApplianceInfo.print(appliances, criteriaFridge);
     }
 }
